@@ -9,10 +9,20 @@ import java.util.List;
 //Bean gerenciado pelo spring
 @Repository
 public class JediRepository {
-    public List<Jedi> getAllJedi(){
+    //instanciando a variavel jedi
+    private List<Jedi> jedi;
 
-        List<Jedi> jedi = new ArrayList<>();
+    //construtor do repositorio
+    public JediRepository() {
+        jedi = new ArrayList<>();
         jedi.add(new Jedi("Luke", "Skywalker"));
-        return jedi;
+    }
+
+    public List<Jedi> getAllJedi(){
+        return this.jedi;
+    }
+
+    public void add(Jedi jedi) {
+        this.jedi.add(jedi);
     }
 }
