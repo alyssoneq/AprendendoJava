@@ -1,7 +1,12 @@
 package br.com.globallabs.SpringWebMVC.model;
 
+import javax.validation.constraints.NotBlank;
+
 public class Jedi {
+    //Bean para informar que a variavel não pode receber valor vazio
+    @NotBlank
     private String name;
+    @NotBlank
     private String lastName;
 
     public Jedi(String name, String lastname) {
